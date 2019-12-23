@@ -1,0 +1,8 @@
+/build/
+/config/
+/dist/
+/*.js
+/*.vue
+/src/
+/router/
+/test/unit/coverage/
