@@ -105,18 +105,12 @@ import axios from 'axios'
     },
     methods: {
       convert:function() {
-          this.playerOptions.sources.src='/api/v1/media/showMedia/103'
-          this.form.sudentImg = '/api/v1/media/showMedia/104'
-          // axios.get(
-          //   "/api/v1/media/showMedia/104",
-          //   {
-          //     headers:{
-          //       'Content-Type':'application/image/jpeg'
-          //     }
-          //   }).then(res => {
-          //     console.log(res.data)
-          //     this.form.sudentImg = res.data
-          // })
+          this.playerOptions.sources.src='/dmms/v1/media/showMedia/103'
+          this.form.sudentImg = '/dmms/v1/media/showMedia/104'
+          axios.get('/dmms/index').then(res => {
+              console.log('查询内容%o',res)
+              this.form.name = res.data.msg
+          })
       },
       onSubmit() {
           console.log(this.form.value)
